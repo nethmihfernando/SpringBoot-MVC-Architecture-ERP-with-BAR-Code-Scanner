@@ -1,0 +1,43 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #222;
+}
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.1rem; }
+
+section { margin-bottom: 2rem; }
+
+#scan-input { font-size: 1.1rem; padding: 0.4rem; width: 260px; }
+
+#scan-status { margin-left: 0.5rem; font-size: 0.9rem; }
+#scan-status.ok { color: green; }
+#scan-status.error { color: crimson; }
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input {
+  display: block;
+  padding: 0.3rem;
+  width: 260px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+button { cursor: pointer; margin-top: 0.5rem; margin-right: 0.5rem; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product CRUD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Products</h1>
+
+<section id="scan-section">
+  <label for="scan-input">Scan barcode:</label>
+  <input id="scan-input" type="text" autofocus placeholder="Focus here and scan...">
+  <span id="scan-status"></span>
+</section>
+
+<section id="form-section">
+  <h2 id="form-title">Add product</h2>
+  <form id="product-form">
+    <input type="hidden" id="product-id">
+    <label>Barcode <input id="barcode" required></label>
+    <label>Name <input id="name" required></label>
+    <label>Description <input id="description"></label>
+    <label>Price <input id="price" type="number" step="0.01" min="0" required></label>
+    <label>Quantity <input id="quantity" type="number" min="0" required></label>
+    <button type="submit" id="submit-btn">Save</button>
+    <button type="button" id="cancel-btn" hidden>Cancel</button>
+  </form>
+</section>
+
+<section id="list-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Barcode</th><th>Name</th><th>Description</th><th>Price</th><th>Qty</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="product-table-body"></tbody>
+  </table>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
