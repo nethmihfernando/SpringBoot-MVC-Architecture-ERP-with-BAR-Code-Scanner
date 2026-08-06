@@ -23,6 +23,36 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.CONFLICT, ex.getMessage());
     }
 
+    @ExceptionHandler(PurchaseOrderNotFoundException.class)
+    public ResponseEntity<Object> handlePurchaseOrderNotFound(PurchaseOrderNotFoundException ex) {
+        return build(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(DuplicatePoNumberException.class)
+    public ResponseEntity<Object> handleDuplicatePoNumber(DuplicatePoNumberException ex) {
+        return build(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(InvalidPurchaseOrderStateException.class)
+    public ResponseEntity<Object> handleInvalidPurchaseOrderState(InvalidPurchaseOrderStateException ex) {
+        return build(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(GrnNotFoundException.class)
+    public ResponseEntity<Object> handleGrnNotFound(GrnNotFoundException ex) {
+        return build(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(DuplicateGrnNumberException.class)
+    public ResponseEntity<Object> handleDuplicateGrnNumber(DuplicateGrnNumberException ex) {
+        return build(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(InvalidGrnException.class)
+    public ResponseEntity<Object> handleInvalidGrn(InvalidGrnException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Object> handleValidation(MethodArgumentNotValidException ex) {
         String message = ex.getBindingResult().getFieldErrors().stream()
